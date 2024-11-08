@@ -21,6 +21,10 @@ public class ClienteService {
 		return cli.stream().map(this::toClienteDTO).collect(Collectors.toList());
 	}
 
+	public Cliente insert(Cliente cli) {
+		cli = clienteRepository.save(cli);
+		return cli;
+	}
 	
 	public ClienteDTO toClienteDTO(Cliente cli) {
 		ClienteDTO obj = new ClienteDTO(cli.getId(),cli.getNome(),cli.getEmail(),cli.getCar());
