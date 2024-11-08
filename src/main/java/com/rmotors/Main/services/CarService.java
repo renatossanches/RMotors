@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.rmotors.Main.dtos.CarDTO;
 import com.rmotors.Main.entities.Car;
+import com.rmotors.Main.entities.Cliente;
 import com.rmotors.Main.repositories.CarRepository;
 
 @Service
@@ -21,6 +22,12 @@ public class CarService {
 		return obj.stream().map(this::toCarDTO).collect(Collectors.toList());
 		
 	}
+	
+	public Car insert(Car car) {
+		car = carRepository.save(car);
+		return car;
+	}
+	
 	public CarDTO toCarDTO(Car car) {
 		CarDTO obj = new CarDTO(car.getId(),car.getMarca(),car.getModelo(),car.getAno(),car.getQuilometragem(),car.getTipoDeCombustível(),car.getPlaca(),car.getCor());
 		return obj;
