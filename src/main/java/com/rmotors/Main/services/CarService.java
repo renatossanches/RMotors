@@ -25,5 +25,4 @@ public class CarService {
 		CarDTO obj = new CarDTO(car.getId(),car.getMarca(),car.getModelo(),car.getAno(),car.getQuilometragem(),car.getTipoDeCombustível(),car.getPlaca(),car.getCor());
 		return obj;
 	}
-	
 }
