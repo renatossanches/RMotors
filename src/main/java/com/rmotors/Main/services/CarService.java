@@ -21,4 +21,9 @@ public class CarService {
 		return obj.stream().map(this::toCarDTO).collect(Collectors.toList());
 		
 	}
+	public CarDTO toCarDTO(Car car) {
+		CarDTO obj = new CarDTO(car.getId(),car.getMarca(),car.getModelo(),car.getAno(),car.getQuilometragem(),car.getTipoDeCombustível(),car.getPlaca(),car.getCor());
+		return obj;
+	}
+	
 }

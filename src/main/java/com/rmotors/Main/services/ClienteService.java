@@ -20,3 +20,9 @@ public class ClienteService {
 		List<Cliente> cli = clienteRepository.findAll(); 
 		return cli.stream().map(this::toClienteDTO).collect(Collectors.toList());
 	}
+
+	public ClienteDTO toClienteDTO(Cliente cli) {
+		ClienteDTO obj = new ClienteDTO(cli.getId(),cli.getNome(),cli.getEmail(),cli.getCar());
+		return obj;
+	}
+}
