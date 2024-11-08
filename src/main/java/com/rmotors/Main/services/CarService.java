@@ -1,14 +1,16 @@
 package com.rmotors.Main.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.rmotors.Main.dtos.CarDTO;
 import com.rmotors.Main.entities.Car;
-import com.rmotors.Main.entities.Cliente;
 import com.rmotors.Main.repositories.CarRepository;
 
 @Service
@@ -26,6 +28,11 @@ public class CarService {
 	public Car insert(Car car) {
 		car = carRepository.save(car);
 		return car;
+	}
+	
+	public Car findById(@PathVariable String id) {
+		Optional<Car> car = carRepository.findById(id);
+		return car.orElseThrow(()-> new ServiceException("Objeto não encontrado"));
 	}
 	
 	public CarDTO toCarDTO(Car car) {
