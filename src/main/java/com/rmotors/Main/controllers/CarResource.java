@@ -21,12 +21,17 @@ import com.rmotors.Main.services.CarService;
 public class CarResource {
 
 	@Autowired
-	private CarService carService;
+	private CarService repo;
 	
 	@GetMapping
 	public ResponseEntity<List<CarDTO>> findAll() {
-		List<CarDTO> lista = carService.findAll();
+		List<CarDTO> lista = repo.findAll();
 		return ResponseEntity.ok(lista);
 	}
 	
+	@PostMapping
+	public ResponseEntity<Car> insert(@RequestBody Car car){
+		repo.insert(car);
+		return new ResponseEntity(car, HttpStatus.CREATED);
+	}
 }
