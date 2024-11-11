@@ -10,6 +10,7 @@ import com.rmotors.Main.dtos.ClienteDTO;
 import com.rmotors.Main.entities.Cliente;
 import com.rmotors.Main.repositories.ClienteRepository;
 import com.rmotors.Main.services.exceptions.ServiceExceptions;
+import com.rmotors.Main.services.exceptions.handler.HandlerConfiguration;
 
 @Service
 public class ClienteService {

@@ -42,10 +42,10 @@ public class Cliente {
 	private String endereco;
 	@Column(length = 5)
 	private Integer numEndereco;
-	@Column(unique = true)
+	@Column(unique = true,  nullable = false)
 	private String email;
 	private String senha;
-	@Column(length = 11, unique = true)
+	@Column(length = 11, unique = true, nullable = false)
 	private String cpf;
 	
 
