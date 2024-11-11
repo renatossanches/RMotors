@@ -32,7 +32,7 @@ public class ClienteResource {
 	@PostMapping
 	public ResponseEntity<Cliente> insert(@RequestBody Cliente cli){
 		repo.insert(cli);
-		return new ResponseEntity(cli, HttpStatus.CREATED);
+		return new ResponseEntity<Cliente>(cli, HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/{id}")

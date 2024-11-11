@@ -33,6 +33,6 @@ public class CarResource {
 	@PostMapping
 	public ResponseEntity<Car> insert(@RequestBody Car car){
 		repo.insert(car);
-		return new ResponseEntity(car, HttpStatus.CREATED);
+		return new ResponseEntity<Car>(car, HttpStatus.CREATED);
 	}
 }
