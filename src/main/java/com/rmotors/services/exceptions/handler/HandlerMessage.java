@@ -1,4 +1,4 @@
-package com.rmotors.Main.services.exceptions.handler;
+package com.rmotors.services.exceptions.handler;
 
 public class HandlerMessage extends RuntimeException{
 	private static final long serialVersionUID = 1L;

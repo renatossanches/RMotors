@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Configuration;
 
-import com.rmotors.Main.entities.Cliente;
+import com.rmotors.entities.Cliente;
 
 @SpringBootTest
 @Configuration

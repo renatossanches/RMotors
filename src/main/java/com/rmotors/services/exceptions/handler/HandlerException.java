@@ -1,4 +1,4 @@
-package com.rmotors.Main.services.exceptions.handler;
+package com.rmotors.services.exceptions.handler;
 
 import java.time.LocalDateTime;
 
